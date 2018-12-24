@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPWelcomeViewController: SPBaseController {
+class SPWelcomeViewController: SPController {
     
     let imageView = SPDownloadingImageView()
     let titleLabel = UILabel()
@@ -210,7 +210,7 @@ struct SPWelcomeData {
     var comment: String = "Here you can place comment"
     var buttonTitle: String = "Continue"
     var image: UIImage = UIImage()
-    var color: UIColor = SPNativeStyleKit.Colors.blue
+    var color: UIColor = SPNativeColors.blue
     var backgroundColor: UIColor = UIColor.white
     var textColor: UIColor = UIColor.black
     var statusBarStyle: SPStatusBar = .dark

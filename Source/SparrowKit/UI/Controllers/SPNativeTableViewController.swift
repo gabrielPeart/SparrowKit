@@ -31,7 +31,6 @@ class SPNativeTableViewController: SPBaseTableViewController {
     let promoTableViewCellIdentifier: String = "promoTableViewCellIdentifier"
     let featuredTitleTableViewCellIdentifier: String = "featuredTitleTableViewCellIdentifier"
     let mailTableViewCellIdentifier: String = "mailTableViewCellIdentifier"
-    let collectionImagesTableViewCellIdentifier: String = "collectionImagesTableViewCellIdentifier"
     let imageTableViewCellIdentifier: String = "imageTableViewCellIdentifier"
     let proposeTableViewCellIdentifier: String = "proposeTableViewCellIdentifier"
     let mengTransformTableViewCell = "mengTransformTableViewCell"
@@ -62,7 +61,7 @@ class SPNativeTableViewController: SPBaseTableViewController {
             self.tableView.contentInsetAdjustmentBehavior = .always
         }
         
-        self.tableView.backgroundColor = SPNativeStyleKit.Colors.customGray
+        self.tableView.backgroundColor = SPNativeColors.customGray
         self.tableView.delaysContentTouches = false
         self.tableView.allowsSelection = false
         self.tableView.rowHeight = UITableView.automaticDimension
@@ -78,13 +77,12 @@ class SPNativeTableViewController: SPBaseTableViewController {
         self.tableView.register(SPPromoTableViewCell.self, forCellReuseIdentifier: self.promoTableViewCellIdentifier)
         self.tableView.register(SPFormFeaturedTitleTableViewCell.self, forCellReuseIdentifier: self.featuredTitleTableViewCellIdentifier)
         self.tableView.register(SPFormMailTableViewCell.self, forCellReuseIdentifier: self.mailTableViewCellIdentifier)
-        self.tableView.register(SPCollectionImagesTableViewCell.self, forCellReuseIdentifier: self.collectionImagesTableViewCellIdentifier)
         self.tableView.register(SPImageTableViewCell.self, forCellReuseIdentifier: self.imageTableViewCellIdentifier)
         self.tableView.register(SPProposeTableViewCell.self, forCellReuseIdentifier: self.proposeTableViewCellIdentifier)
         self.tableView.register(SPMengTransformTableViewCell.self, forCellReuseIdentifier: self.mengTransformTableViewCell)
         
         self.activityIndicatorView.stopAnimating()
-        self.activityIndicatorView.color = SPNativeStyleKit.Colors.gray
+        self.activityIndicatorView.color = SPNativeColors.gray
         self.view.addSubview(self.activityIndicatorView)
         
         self.updateLayout(with: self.view.frame.size)
@@ -148,10 +146,6 @@ class SPNativeTableViewController: SPBaseTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.mailTableViewCellIdentifier, for: indexPath as IndexPath) as! SPFormMailTableViewCell
         cell.currentIndexPath = indexPath
         return cell
-    }
-    
-    func dequeueCollectionImagesTableViewCell(indexPath: IndexPath) -> SPCollectionImagesTableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: self.collectionImagesTableViewCellIdentifier, for: indexPath as IndexPath) as! SPCollectionImagesTableViewCell
     }
     
     func dequeueImageTableViewCell(indexPath: IndexPath) -> SPImageTableViewCell {

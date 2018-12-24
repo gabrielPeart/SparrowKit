@@ -166,7 +166,7 @@ class SPConfirmActionViewController: UIViewController {
             self.addSubview(self.label)
             
             self.button.setTitle("Сancel", for: .normal)
-            self.button.setTitleColor(SPNativeStyleKit.Colors.blue)
+            self.button.setTitleColor(SPNativeColors.blue)
             self.button.titleLabel?.font = UIFont.system(type: .DemiBold, size: 16)
             self.addSubview(self.button)
         }
@@ -217,7 +217,7 @@ class SPConfirmActionViewController: UIViewController {
             
             self.taskLabel.text = task.uppercased()
             self.taskLabel.font = UIFont.system(type: .Medium, size: 13)
-            self.taskLabel.textColor = SPNativeStyleKit.Colors.gray
+            self.taskLabel.textColor = SPNativeColors.gray
             self.taskLabel.numberOfLines = 1
             self.taskLabel.textAlignment = .right
             self.addSubview(self.taskLabel)
@@ -233,7 +233,7 @@ class SPConfirmActionViewController: UIViewController {
                 self.subtitleLabel = UILabel.init()
                 self.subtitleLabel?.text = subtitle?.uppercased()
                 self.subtitleLabel?.font = UIFont.system(type: .Medium, size: 13)
-                self.subtitleLabel?.textColor = SPNativeStyleKit.Colors.gray
+                self.subtitleLabel?.textColor = SPNativeColors.gray
                 self.subtitleLabel?.numberOfLines = 0
                 self.subtitleLabel?.textAlignment = .left
                 self.addSubview(self.subtitleLabel!)

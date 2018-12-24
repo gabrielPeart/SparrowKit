@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPProposeViewController: SPBaseController {
+class SPProposeViewController: SPController {
     
     private let data: Data
     internal let areaView = AreaView()
@@ -195,7 +195,7 @@ class SPProposeViewController: SPBaseController {
             self.addSubview(self.titleLabel)
             
             self.subtitleLabel.font = UIFont.system(type: .Regular, size: 16)
-            self.subtitleLabel.textColor = SPNativeStyleKit.Colors.black
+            self.subtitleLabel.textColor = SPNativeColors.black
             self.subtitleLabel.numberOfLines = 0
             self.subtitleLabel.setCenteringAlignment()
             self.addSubview(self.subtitleLabel)
@@ -206,7 +206,7 @@ class SPProposeViewController: SPBaseController {
             self.addSubview(self.imageView)
             
             self.button.titleLabel?.font = UIFont.system(type: UIFont.BoldType.Medium, size: 15)
-            self.button.setTitleColor(SPNativeStyleKit.Colors.black)
+            self.button.setTitleColor(SPNativeColors.black)
             self.button.backgroundColor = UIColor.init(hex: "D4D3DB")
             self.addSubview(self.button)
             

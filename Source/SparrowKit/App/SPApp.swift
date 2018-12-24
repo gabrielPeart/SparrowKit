@@ -56,5 +56,12 @@ struct SPApp {
         }
     }
     
+    static func set(elementsColor: UIColor) {
+        UINavigationController.elementsColor = elementsColor
+        UIAlertController.elementsColor = elementsColor
+        UITabBarController.elementsColor = elementsColor
+        UITabBar.appearance().tintColor = elementsColor
+    }
+    
     private init() {}
 }

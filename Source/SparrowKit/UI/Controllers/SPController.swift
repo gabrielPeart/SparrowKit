@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPBaseController: SPStatusBarManagerViewController {
+public class SPController: SPStatusBarManagerViewController {
     
     var activityIndicatorLayoutWithSafeArea: Bool = true
     let activityIndicatorView = UIActivityIndicatorView()
@@ -116,7 +116,7 @@ public class SPBaseController: SPStatusBarManagerViewController {
         self.dismiss()
     }
     
-    //MARK: - keyboard
+    //MARK: - Keyboard
     var isShowKeyboard: Bool = false
     var keyboardSize: CGSize? = nil
     

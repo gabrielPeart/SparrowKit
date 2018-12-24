@@ -70,17 +70,17 @@ struct SPOpener {
     
     struct Link {
         
-        public static func redirectToBrowserAndOpen(link: String) {
+        public static func browser(link: String) {
             
             guard let url = URL(string: link) else {
                 print("SPOpener - can not create URL")
                 return
             }
             
-            self.redirectToBrowserAndOpen(link: url)
+            self.browser(link: url)
         }
         
-        public static func redirectToBrowserAndOpen(link: URL) {
+        public static func browser(link: URL) {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(link, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             } else {
@@ -88,7 +88,7 @@ struct SPOpener {
             }
         }
         
-        public static func openInsideApp(link: String, on viewController: UIViewController) {
+        public static func inside(link: String, on viewController: UIViewController) {
             if let url = URL.init(string: link) {
                 let safariController = SFSafariViewController.init(url: url)
                 viewController.present(safariController, animated: true, completion: nil)
@@ -103,9 +103,6 @@ struct SPOpener {
     private init() {}
 }
 
-
-
-// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

@@ -21,23 +21,26 @@
 
 import UIKit
 
-public class SPCollectionContainerCell<ContentView: UIView>: UICollectionViewCell {
+class SPSeparatorView: SPView {
     
-    let view = ContentView.init()
-    var currentIndexPath: IndexPath?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = UIColor.clear
-        self.addSubview(view)
+    private var height: CGFloat {
+        return 0.5
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func commonInit() {
+        super.commonInit()
+        self.backgroundColor = UIColor.init(hex: "515B66").withAlphaComponent(0.4)
+        self.round = true
+        self.setHeight(self.height)
     }
     
-    override public func layoutSubviews() {
+    func layout(origin: CGPoint, width: CGFloat) {
+        self.frame.origin = origin
+        self.set(width: width, height: self.height)
+    }
+    
+    override func layoutSubviews() {
         super.layoutSubviews()
-        self.view.setEqualsFrameFromBounds(self)
+        self.setHeight(self.height)
     }
 }

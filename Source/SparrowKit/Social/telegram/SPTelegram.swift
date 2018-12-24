@@ -47,7 +47,7 @@ class SPTelegram {
     
     static func joinChannel(id: String) {
         let url = "https://t.me/joinchat/\(id)"
-        SPOpener.Link.redirectToBrowserAndOpen(link: url)
+        SPOpener.Link.browser(link: url)
     }
     
     static func openBot(username: String) {
@@ -56,13 +56,12 @@ class SPTelegram {
             username.removeFirst()
         }
         let url = "https://telegram.me/\(username)"
-        SPOpener.Link.redirectToBrowserAndOpen(link: url)
+        SPOpener.Link.browser(link: url)
     }
     
     private init() {}
 }
 
-// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

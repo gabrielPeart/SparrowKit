@@ -38,7 +38,7 @@ class SPBaseTableViewController: SPStatusBarManagerTableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
         
         self.activityIndicatorView.stopAnimating()
-        self.activityIndicatorView.color = SPNativeStyleKit.Colors.gray
+        self.activityIndicatorView.color = SPNativeColors.gray
         self.view.addSubview(self.activityIndicatorView)
         
         self.updateLayout(with: self.view.frame.size)
