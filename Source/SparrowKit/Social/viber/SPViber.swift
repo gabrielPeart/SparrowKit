@@ -24,11 +24,7 @@ import UIKit
 class SPViber {
     
     static var isSetApp: Bool {
-        if UIApplication.shared.canOpenURL(URL(string: "viber://forward?text=test")!) {
-            return true
-        } else {
-            return false
-        }
+        return UIApplication.shared.canOpenURL(URL(string: "viber://forward?text=test")!)
     }
     
     static func share(text: String, complection: @escaping (_ isOpened: Bool)->() = {_ in }) {

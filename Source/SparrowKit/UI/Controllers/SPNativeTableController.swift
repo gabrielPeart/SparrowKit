@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPNativeTableViewController: SPBaseTableViewController {
+class SPNativeTableController: SPTableController {
     
     let labelTableViewCellIdentifier: String = "labelTableViewCellIdentifier"
     let textFieldTableViewCellIdentifier: String = "textFieldTableViewCellIdentifier"
@@ -39,15 +39,8 @@ class SPNativeTableViewController: SPBaseTableViewController {
     var showBottomInsets: Bool = true
     var autoTopSpace: Bool = true
     var autoBottomSpace: Bool = true
+    
     private var autoSpaceHeight: CGFloat = 35
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,7 +157,7 @@ class SPNativeTableViewController: SPBaseTableViewController {
 }
 
 //MARK: - manage selection
-extension SPNativeTableViewController {
+extension SPNativeTableController {
     
     override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         
@@ -178,7 +171,7 @@ extension SPNativeTableViewController {
 }
 
 //MARK: - manage spaces
-extension SPNativeTableViewController {
+extension SPNativeTableController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {

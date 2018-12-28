@@ -39,7 +39,7 @@ struct SPAppStore {
         }
     }
     
-    static func requestReview(appID: String, force: Bool) {
+    static func review(appID: String, force: Bool) {
         if force {
             if let url = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id\(appID)?mt=8&action=write-review"),
                 UIApplication.shared.canOpenURL(url) {

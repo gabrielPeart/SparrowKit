@@ -24,11 +24,7 @@ import UIKit
 class SPInstagram {
     
     static var isSetApp: Bool {
-        if UIApplication.shared.canOpenURL(URL(string: "instagram://user?username=test")!) {
-            return true
-        } else {
-            return false
-        }
+        return UIApplication.shared.canOpenURL(URL(string: "instagram://user?username=test")!)
     }
     
     static func openPost(id: String) {
@@ -38,7 +34,7 @@ class SPInstagram {
         if UIApplication.shared.canOpenURL(instagramUrl!) {
             UIApplication.shared.open(instagramUrl!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
-            SPOpener.Link.browser(link: safariURL)
+            SPApp.open(link: safariURL.absoluteString, redirect: true)
         }
     }
     
@@ -49,7 +45,7 @@ class SPInstagram {
         if UIApplication.shared.canOpenURL(instagramUrl!) {
             UIApplication.shared.open(instagramUrl!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
-            SPOpener.Link.browser(link: safariURL)
+            SPApp.open(link: safariURL.absoluteString, redirect: true)
         }
     }
     

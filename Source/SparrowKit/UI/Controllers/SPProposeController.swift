@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPProposeViewController: SPController {
+class SPProposeController: SPController {
     
     private let data: Data
     internal let areaView = AreaView()
@@ -89,7 +89,7 @@ class SPProposeViewController: SPController {
     
     func present(on viewController: UIViewController) {
         viewController.present(self, animated: false, completion: {
-            SPVibration.impact(SPVibration.Mode.warning)
+            SPVibration.impact(system: .warning)
             self.areaView.frame.origin.y = self.view.frame.size.height
             self.areaView.isHidden = false
             SPAnimationSpring.animate(self.animationDuration, animations: {

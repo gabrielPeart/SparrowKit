@@ -20,6 +20,7 @@
 // SOFTWARE.
 
 import UIKit
+import StoreKit
 
 struct SPApp {
     
@@ -61,6 +62,12 @@ struct SPApp {
         UIAlertController.elementsColor = elementsColor
         UITabBarController.elementsColor = elementsColor
         UITabBar.appearance().tintColor = elementsColor
+    }
+    
+    static func requestReview() {
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        }
     }
     
     private init() {}

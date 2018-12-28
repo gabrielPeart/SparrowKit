@@ -24,11 +24,7 @@ import UIKit
 class SPTwitter {
     
     static var isSetApp: Bool {
-        if UIApplication.shared.canOpenURL(URL(string: "twitter://post?message=test")!) {
-            return true
-        } else {
-            return false
-        }
+        return UIApplication.shared.canOpenURL(URL(string: "twitter://post?message=test")!)
     }
     
     static func share(text: String, complection: @escaping (_ isOpened: Bool)->() = {_ in }) {
