@@ -64,11 +64,5 @@ struct SPApp {
         UITabBar.appearance().tintColor = elementsColor
     }
     
-    static func requestReview() {
-        if #available(iOS 10.3, *) {
-            SKStoreReviewController.requestReview()
-        }
-    }
-    
     private init() {}
 }
