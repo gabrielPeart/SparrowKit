@@ -25,6 +25,7 @@ class SPProposeController: SPController {
     
     private let data: Data
     internal let areaView = AreaView()
+    private var isPresent: Bool = false
     
     private var animationDuration: TimeInterval {
         return 0.5
@@ -78,28 +79,24 @@ class SPProposeController: SPController {
         self.updateLayout(with: self.view.frame.size)
     }
     
-    override func updateLayout(with size: CGSize) {
-        self.areaView.setWidth(size.width - (self.space * 2))
-        self.areaView.layoutSubviews()
-        self.areaView.sizeToFit()
-        self.areaView.frame.origin.x = self.space
-        self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (self.bottomSafeArea / 2) - self.space
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !self.isPresent {
+            self.present()
+            self.isPresent = true
+        }
     }
     
-    func present(on viewController: UIViewController) {
-        viewController.present(self, animated: false, completion: {
-            SPVibration.impact(system: .warning)
-            self.areaView.frame.origin.y = self.view.frame.size.height
-            self.areaView.isHidden = false
-            SPAnimationSpring.animate(self.animationDuration, animations: {
-                self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-                
-                self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (self.bottomSafeArea / 2) - self.space
-            }, spring: 1,
-               velocity: 1,
-               options: .transitionCurlUp)
-        })
+    private func present() {
+        SPVibration.impact(system: .warning)
+        self.areaView.frame.origin.y = self.view.frame.size.height
+        self.areaView.isHidden = false
+        SPAnimationSpring.animate(self.animationDuration, animations: {
+            self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (self.bottomSafeArea / 2) - self.space
+        }, spring: 1,
+           velocity: 1,
+           options: .transitionCurlUp)
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
@@ -130,8 +127,16 @@ class SPProposeController: SPController {
         }
     }
     
-    @objc func handleGesture(sender: UIPanGestureRecognizer) {
+    override func updateLayout(with size: CGSize) {
+        self.areaView.setWidth(size.width - (self.space * 2))
+        self.areaView.layoutSubviews()
+        self.areaView.sizeToFit()
+        self.areaView.frame.origin.x = self.space
+        self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (self.bottomSafeArea / 2) - self.space
         
+    }
+    
+    @objc func handleGesture(sender: UIPanGestureRecognizer) {
         let returnAreaViewToPoint = {
             SPAnimationSpring.animate(self.animationDuration, animations: {
                 self.areaView.frame.origin.y = self.view.frame.size.height - self.areaView.frame.height - (self.bottomSafeArea / 2) - self.space
