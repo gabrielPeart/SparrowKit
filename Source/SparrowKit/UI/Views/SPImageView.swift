@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPImageView: UIImageView {
+public class SPImageView: UIImageView {
     
     var round: Bool = false {
         didSet {

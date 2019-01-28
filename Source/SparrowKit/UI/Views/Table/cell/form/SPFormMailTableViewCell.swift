@@ -21,6 +21,4 @@
 
 import UIKit
 
-class SPFormMailTableViewCell: SPBaseContentTableViewCell {
-    
-}
+public class SPFormMailTableViewCell: SPBaseContentTableViewCell {}

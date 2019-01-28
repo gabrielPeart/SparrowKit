@@ -23,7 +23,7 @@ import Foundation
 import CoreSpotlight
 import MobileCoreServices
 
-struct SPSpotlight {
+public  struct SPSpotlight {
     
     static let domainIdentifier = "by.ivanvorobei"
     

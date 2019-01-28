@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPTableViewCell: UITableViewCell {
+public class SPTableViewCell: UITableViewCell {
     
     var contentViews: [UIView] {
         return self.contentView.subviews
@@ -31,7 +31,7 @@ class SPTableViewCell: UITableViewCell {
     let activityIndicatorView = UIActivityIndicatorView.init()
     var currentIndexPath: IndexPath? = nil
     
-    override var accessoryType: UITableViewCell.AccessoryType {
+    override public var accessoryType: UITableViewCell.AccessoryType {
         didSet {
             if self.accessoryType == .disclosureIndicator {
                 self.selectionStyle = .default
@@ -108,7 +108,7 @@ class SPTableViewCell: UITableViewCell {
         }
     }
     
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
         self.accessoryType = .none
         self.currentIndexPath = nil
@@ -117,7 +117,7 @@ class SPTableViewCell: UITableViewCell {
         self.processActivityIndicatorView.stopAnimating()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         if let accessoryView = self.accessoryView {
             self.processActivityIndicatorView.center = accessoryView.center

@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPFormTextInputTableViewCell: SPTableViewCell {
+public class SPFormTextInputTableViewCell: SPTableViewCell {
     
     let textInputView: UITextView = UITextView()
 
@@ -37,7 +37,7 @@ class SPFormTextInputTableViewCell: SPTableViewCell {
         return [self.textInputView]
     }
     
-    override var accessoryType: UITableViewCell.AccessoryType {
+    override public var accessoryType: UITableViewCell.AccessoryType {
         didSet {
             if self.accessoryType == .disclosureIndicator {
                 self.selectionStyle = .default
@@ -81,13 +81,13 @@ class SPFormTextInputTableViewCell: SPTableViewCell {
         self.accessoryType = .none
     }
     
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
         self.accessoryType = .none
         self.textInputView.text = ""
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         let xPosition: CGFloat = (self.imageView?.frame.bottomXPosition ?? 0) + self.layoutMargins.left

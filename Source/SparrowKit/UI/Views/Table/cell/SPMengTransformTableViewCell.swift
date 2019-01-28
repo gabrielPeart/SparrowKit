@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPMengTransformTableViewCell: UITableViewCell {
+public class SPMengTransformTableViewCell: UITableViewCell {
     
     let collectionView = SPMengTransformCollectionView()
     var collectionHeight: CGFloat = SPMengTransformCollectionView.recomendedHeight {

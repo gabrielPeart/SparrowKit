@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPPromoTableViewCell: SPBaseContentTableViewCell {
+public class SPPromoTableViewCell: SPBaseContentTableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,7 +32,7 @@ class SPPromoTableViewCell: SPBaseContentTableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
         self.backgroundColor = UIColor.clear
         self.commonInit()

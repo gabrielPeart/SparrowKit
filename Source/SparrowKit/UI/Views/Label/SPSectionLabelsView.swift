@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPSectionLabelsView: SPView {
+public class SPSectionLabelsView: SPView {
     
     let titleLabel = SPLabel()
     let subtitleLabel = SPLabel()
@@ -53,7 +53,7 @@ class SPSectionLabelsView: SPView {
         self.layoutSubviews()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         self.titleLabel.sizeToFit()

@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPTableView: UITableView {
+public class SPTableView: UITableView {
     
     private var cacheImages: [(link: String, image: UIImage)] = []
 }

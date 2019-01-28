@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPFormLabelTableViewCell: SPTableViewCell {
+public class SPFormLabelTableViewCell: SPTableViewCell {
     
     let label: UILabel = UILabel()
     let descriptionLabel: UILabel = UILabel()
@@ -33,7 +33,7 @@ class SPFormLabelTableViewCell: SPTableViewCell {
         return [self.descriptionLabel]
     }
     
-    override var accessoryType: UITableViewCell.AccessoryType {
+    override public var accessoryType: UITableViewCell.AccessoryType {
         didSet {
             if self.accessoryType == .disclosureIndicator {
                 self.selectionStyle = .default
@@ -74,7 +74,7 @@ class SPFormLabelTableViewCell: SPTableViewCell {
         self.accessoryType = .none
     }
     
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
         self.accessoryType = .none
         self.label.text = "Title"
@@ -84,7 +84,7 @@ class SPFormLabelTableViewCell: SPTableViewCell {
         self.fixWidthLabel = nil
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         let xPosition: CGFloat = (self.imageView?.frame.bottomXPosition ?? 0) + self.layoutMargins.left

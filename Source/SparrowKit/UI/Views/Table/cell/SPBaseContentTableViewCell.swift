@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPBaseContentTableViewCell: SPTableViewCell {
+public class SPBaseContentTableViewCell: SPTableViewCell {
     
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
@@ -316,30 +316,26 @@ class SPBaseContentTableViewCell: SPTableViewCell {
         self.spaceAfterDescribtion = 15
         self.bottomSpace = 7
         self.spaceBetweenImageAndTitles = 15
-        
-        /*self.subtitleLabel.backgroundColor = UIColor.red
-        self.titleLabel.backgroundColor = UIColor.blue
-        self.descriptionLabel.backgroundColor = UIColor.brown*/
     }
     
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+    override public func setHighlighted(_ highlighted: Bool, animated: Bool) {
         let myViewBackgroundColor = self.iconImageView.gradeView.backgroundColor
         super.setHighlighted(highlighted, animated: animated)
         self.iconImageView.gradeView.backgroundColor = myViewBackgroundColor
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override public func setSelected(_ selected: Bool, animated: Bool) {
         let myViewBackgroundColor = self.iconImageView.gradeView.backgroundColor
         super.setSelected(selected, animated: animated)
         self.iconImageView.gradeView.backgroundColor = myViewBackgroundColor
     }
     
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
         self.setDefaultParametrs()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         if self.roundImage {

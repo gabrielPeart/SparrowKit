@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPDownloadingButton: SPButton {
+public class SPDownloadingButton: SPButton {
     
     let activityIndicatorView = UIActivityIndicatorView.init()
     var isFrameRounded: Bool = false
@@ -50,7 +50,7 @@ class SPDownloadingButton: SPButton {
         })
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         self.activityIndicatorView.center = CGPoint.init(x: self.frame.width / 2, y: self.frame.height / 2)
         

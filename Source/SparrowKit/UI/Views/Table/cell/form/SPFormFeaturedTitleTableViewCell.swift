@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPFormFeaturedTitleTableViewCell: UITableViewCell {
+public class SPFormFeaturedTitleTableViewCell: UITableViewCell {
     
     let titleLabel = UILabel()
     let button = SPDownloadingButton()
@@ -93,7 +93,7 @@ class SPFormFeaturedTitleTableViewCell: UITableViewCell {
         self.button.centerYAnchor.constraint(equalTo: titleLabel.layoutMarginsGuide.centerYAnchor, constant: 0).isActive = true
     }
     
-    override func prepareForReuse() {
+    override public func prepareForReuse() {
         super.prepareForReuse()
         self.titleLabel.text = "Title"
         self.withButton = false
@@ -101,7 +101,7 @@ class SPFormFeaturedTitleTableViewCell: UITableViewCell {
         self.type = .large
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         self.separatorInset.left = self.frame.width
         

@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPTextField: UITextField {
+public class SPTextField: UITextField {
     
     public var textInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) {
         didSet { setNeedsDisplay() }

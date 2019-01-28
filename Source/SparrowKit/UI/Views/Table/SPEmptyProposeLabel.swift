@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPEmptyProposeLabel: UILabel {
+public class SPEmptyProposeLabel: UILabel {
     
     init() {
         super.init(frame: CGRect.zero)

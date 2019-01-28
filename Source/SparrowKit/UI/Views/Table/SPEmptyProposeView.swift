@@ -21,7 +21,7 @@
 
 import UIKit
 
-class SPEmptyProposeView: UIView {
+public class SPEmptyProposeView: UIView {
     
     let imageView = SPDownloadingImageView()
     let label = UILabel()
@@ -65,7 +65,7 @@ class SPEmptyProposeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         self.button.sizeToFit()
         self.button.setXCenteringFromSuperview()
         

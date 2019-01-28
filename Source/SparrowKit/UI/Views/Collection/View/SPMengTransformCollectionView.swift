@@ -21,7 +21,7 @@
 
 import UIKit
 
-struct SPMengTransformCollectionData {
+public struct SPMengTransformCollectionData {
     
     var title: String
     var subtitle: String
@@ -40,7 +40,7 @@ struct SPMengTransformCollectionData {
     }
 }
 
-class SPMengTransformCollectionView: SPCollectionView {
+public class SPMengTransformCollectionView: SPCollectionView {
     
     var data: [SPMengTransformCollectionData] = []
     var withParalax: Bool = true
@@ -73,11 +73,11 @@ class SPMengTransformCollectionView: SPCollectionView {
 
 extension SPMengTransformCollectionView: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.data.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let data = self.data[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sectionCell", for: indexPath) as! SPMengTransformCollectionViewCell
         cell.currentIndexPath = indexPath
@@ -166,7 +166,7 @@ extension SPMengTransformCollectionView: UICollectionViewDataSource {
 
 extension SPMengTransformCollectionView: UICollectionViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.updateCells()
     }
     
