@@ -25,19 +25,6 @@ public struct SPVibration { private init() {} }
 
 extension SPVibration {
     
-    public static func impact(system mode: SystemMode) {
-        let generator = UINotificationFeedbackGenerator()
-        
-        switch mode {
-        case .success:
-            generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.success)
-        case .warning:
-            generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.warning)
-        case .error:
-            generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.error)
-        }
-    }
-    
     public static func impact(_ style: Style) {
         
         switch style {
@@ -50,18 +37,24 @@ extension SPVibration {
         case .heavy:
             let generator = UIImpactFeedbackGenerator(style: .heavy)
             generator.impactOccurred()
+        case .success:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.success)
+        case .warning:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.warning)
+        case .error:
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(UINotificationFeedbackGenerator.FeedbackType.error)
         }
-    }
-    
-    public enum SystemMode {
-        case error
-        case success
-        case warning
     }
     
     public enum Style {
         case light
         case medium
         case heavy
+        case error
+        case success
+        case warning
     }
 }

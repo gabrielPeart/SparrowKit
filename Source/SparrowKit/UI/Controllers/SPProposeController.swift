@@ -88,7 +88,7 @@ public class SPProposeController: SPController {
     }
     
     private func present() {
-        SPVibration.impact(system: .warning)
+        SPVibration.impact(.warning)
         self.areaView.frame.origin.y = self.view.frame.size.height
         self.areaView.isHidden = false
         SPAnimationSpring.animate(self.animationDuration, animations: {

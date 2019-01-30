@@ -42,7 +42,7 @@ public  struct SPSpotlight {
             
             CSSearchableIndex.default().indexSearchableItems([item]) { error in
                 if let error = error {
-                    print("SPSpotlight addItem error: \(error.localizedDescription)")
+                    print("SPSpotlight - addItem error: \(error.localizedDescription)")
                 }
             }
         }
@@ -52,7 +52,7 @@ public  struct SPSpotlight {
         if #available(iOS 9.0, *) {
             CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: ["\(identifier)"]) { error in
                 if let error = error {
-                    print("SPSpotlight removeItem error: \(error.localizedDescription)")
+                    print("SPSpotlight - removeItem error: \(error.localizedDescription)")
                 }
             }
         }
