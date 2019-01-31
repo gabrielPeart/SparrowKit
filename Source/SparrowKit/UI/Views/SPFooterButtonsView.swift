@@ -89,10 +89,30 @@ public class SPFooterActionsView: SPView {
 
 class SPFooterActionButton: SPButton {
     
+    var rightIconView: UIView? {
+        willSet {
+            self.rightIconView?.removeFromSuperview()
+        }
+        didSet {
+            if let view = self.rightIconView {
+                self.addSubview(view)
+                self.layoutSubviews()
+            }
+        }
+    }
+    
     override func commonInit() {
         super.commonInit()
         self.setTitleColor(SPNativeColors.blue)
         self.titleLabel?.font = UIFont.system(type: .Regular, size: 21)
         self.contentHorizontalAlignment = .left
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let sideSize: CGFloat = self.frame.height * 0.36
+        self.rightIconView?.frame = CGRect.init(x: 0, y: 0, width: sideSize, height: sideSize)
+        self.rightIconView?.center.y = self.frame.height / 2
+        self.rightIconView?.frame.bottomXPosition = self.frame.width
     }
 }

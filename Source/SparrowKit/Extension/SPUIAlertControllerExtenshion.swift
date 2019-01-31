@@ -100,4 +100,11 @@ extension UIAlertController {
         }
         self.addAction(action)
     }
+    
+    public func addCancelAction(title: String, complection: @escaping ()->() = {}) {
+        let action = UIAlertAction(title: title, style: .cancel) { (action) in
+            complection()
+        }
+        self.addAction(action)
+    }
 }
