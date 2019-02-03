@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.source        = { :git => "https://github.com/IvanVorobei/SparrowKit.git", :tag => s.version }
   s.license       = { :type => "MIT", :file => "LICENSE" }
   
-  s.author        = { "Ivan Vorobei" => "ivanvorobei@icloud.com" }
+  s.author        = { "Ivan Vorobei" => "hello@ivanvorobei.by" }
   
   s.swift_version = '4.2'
   s.platform      = :ios
