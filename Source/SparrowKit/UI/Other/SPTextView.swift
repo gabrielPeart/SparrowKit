@@ -21,26 +21,23 @@
 
 import UIKit
 
-public class SPEmptyProposeLabel: UILabel {
+class SPTextView: UITextView {
+    
+    var cursorColor: UIColor = UIColor.blue {
+        didSet {
+            self.tintColor = self.cursorColor
+        }
+    }
     
     init() {
-        super.init(frame: CGRect.zero)
+        super.init(frame: .zero, textContainer: nil)
         self.commonInit()
-    }
-    
-    init(title: String) {
-        super.init(frame: CGRect.zero)
-        self.text = title
-        self.commonInit()
-    }
-    
-    private func commonInit() {
-        self.setCenteringAlignment()
-        self.font = UIFont.system(type: .Regular, size: 14)
-        self.textColor = SPNativeColors.gray
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        self.commonInit()
     }
+    
+    internal func commonInit() {}
 }

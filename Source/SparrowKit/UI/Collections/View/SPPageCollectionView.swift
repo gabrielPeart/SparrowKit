@@ -21,7 +21,7 @@
 
 import UIKit
 
-public class SPCollectionView: UICollectionView {
+public class SPPageCollectionView: UICollectionView {
     
     var layout = SPCollectionViewLayout()
     private var cacheImages: [(link: String, image: UIImage)] = []
@@ -54,7 +54,7 @@ public class SPCollectionView: UICollectionView {
 }
 
 //MARK: - cache
-extension SPCollectionView {
+extension SPPageCollectionView {
     
     func setCachedImage(link: String, indexPath: IndexPath, on imageView: SPDownloadingImageView, cell: SPCollectionViewCell) {
         if let image = self.fromCahce(link: link) {

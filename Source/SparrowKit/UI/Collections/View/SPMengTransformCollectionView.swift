@@ -40,7 +40,7 @@ public struct SPMengTransformCollectionData {
     }
 }
 
-public class SPMengTransformCollectionView: SPCollectionView {
+public class SPMengTransformCollectionView: SPPageCollectionView {
     
     var data: [SPMengTransformCollectionData] = []
     var withParalax: Bool = true

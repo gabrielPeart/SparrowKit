@@ -113,6 +113,6 @@ class SPFooterActionButton: SPButton {
         let sideSize: CGFloat = self.frame.height * 0.36
         self.rightIconView?.frame = CGRect.init(x: 0, y: 0, width: sideSize, height: sideSize)
         self.rightIconView?.center.y = self.frame.height / 2
-        self.rightIconView?.frame.bottomXPosition = self.frame.width
+        self.rightIconView?.frame.bottomXPosition = self.frame.width - sideSize / 3
     }
 }
