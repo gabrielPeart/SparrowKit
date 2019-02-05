@@ -21,7 +21,7 @@
 
 import UIKit
 
-struct SPBufer {
+struct SPBuffer {
     
     public static var text: String? {
         get {
